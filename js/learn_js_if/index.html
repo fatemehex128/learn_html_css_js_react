@@ -37,6 +37,80 @@
     // ما در  جاواسکریپت چند روش نوشتن داریم
     // روش اول : نوشتن مستقیم داخل فایل Script توی فایل html
 
+    // این تابغ یک پرامت نمایش میدهد که میگه یک مقدار وارد کن و وقتی مقدار را وارد کنی برگشت میدهد
+    // این تابع روی آبجکت اصلی ویندو قرار دارد و نیازی نیست پس ویندو نوشته شود
+    let value = prompt("enter value : ")
+
+    // ==  equal (loose equality – performs type coercion)
+    // 2 == 2        => true
+    // "2" == 2      => true
+    // 0 == false    => true
+    // null == undefined => true
+
+    // === equal with type (strict equality – no type coercion)
+    // "2" === 2     => false
+    // 2 === 2       => true
+    // 0 === false   => false
+    // null === undefined => false
+
+    // >   greater than
+    // 5 > 3         => true
+    // "10" > "2"    => false  (string comparison: '1' < '2')
+    // 10 > "5"      => true   (coerced to number)
+
+    // <   less than
+    // 3 < 5         => true
+    // "2" < "10"    => true   (string comparison: '2' > '1', so false in numeric sense but true lexicographically)
+
+    // >=  greater than or equal
+    // 5 >= 5        => true
+    // 6 >= 4        => true
+    // "5" >= 5      => true
+
+    // <=  less than or equal
+    // 4 <= 5        => true
+    // 5 <= 5        => true
+    // "4" <= 3      => false
+
+    // !=  not equal (loose inequality – with type coercion)
+    // 10 != 10      => false
+    // "10" != 10    => false
+    // 0 != false    => false
+
+    // !== not equal with type (strict inequality)
+    // "10" !== 10   => true
+    // 0 !== false   => true
+    // null !== undefined => true
+
+    // &&  logical AND
+    // true && true        => true
+    // true && false       => false
+
+    // توی if استفاده نمیشود
+    // "hello" && 42       => 42       (returns last truthy value)
+    // true ? "" : ""
+    // "" && "world"       => ""       (returns first falsy value)
+
+    // ||  logical OR
+    // true || false       => true
+
+    // توی if استفاده نمیشود
+    // false || "default"  => "default"
+    // 0 || 100            => 100
+    // "hello" || "world"  => "hello"  (returns first truthy value)
+
+    // !   logical NOT
+    // !true               => false
+    // !false              => true
+    // !"hello"            => false    (non-empty string is truthy)
+    // !0                  => true     (0 is falsy)
+
+    if (value > 5) {
+        console.log("hello world")
+    } else {
+        console.log("khodafez")
+    }
+
 
 </script>
 
