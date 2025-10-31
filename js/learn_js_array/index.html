@@ -1,5 +1,8 @@
-<html>
+<html lang="fa" dir="rtl">
 <head>
+    <!--    برای پشتیبانی از زبان فارسی این ها باید اضافه شود-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Language" content="fa"/>
 
     <!--    عنوان بالای صفحه-->
     <title>Document</title>
@@ -38,7 +41,42 @@
     // روش اول : نوشتن مستقیم داخل فایل Script توی فایل html
 
     // کلید آرایه ها نا مرئی هست و از صفر تا هر خونه ای که وجود دارد میباشد و این مقدار همیشه عددی هستش
-    let myArr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+    let myArr = [10, true, 1.4, "hello",]
+
+    // به بخش آبجکت اگر نگاهی بندازی هر کاری اونجا کردیم و هر مقداری داخل ابجکت گذاشتیم همون هم را میتوانیم داخل ارایه بزاریم با این تفاوت که ارایه ها کلید اش مثل آبجگت ها دستی وارد نمیشود و از صفر شروع میشود
+    let myArr2 = [
+        10,
+        true,
+        1.4,
+        "hello",
+        [10, 20, 30],
+        {
+            name: "name",
+            myFunc: () => true
+        },
+        "hello",
+        (x) => x - 2,
+        (x) => {
+            return x + x
+        },
+        function (x) {
+            return x * x
+        }
+    ]
+
+    myArr2[0]
+    myArr2[7] // آدرس تابع برمیگردد
+    myArr2[8](10) // تابع صدا زده میشود
+
+
+    for (let key in myArr2) {
+        // میتوانیم به همین روش با استفاده از متغییر و کلید ان مقدار داخل اش را به دست بیاوریم
+        if (typeof myArr2[key] == "function") {
+            console.log(myArr2[key](15))
+        } else {
+            console.log(myArr2[key])
+        }
+    }
 
 </script>
 
