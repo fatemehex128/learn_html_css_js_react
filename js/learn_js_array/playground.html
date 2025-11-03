@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PlayGround</title>
+</head>
+<body>
+
+<button id="checkAge">
+    check age
+</button>
+
+<script>
+    // فرض میکنیم این لیست یوزر ها از سرور اومده از بک اند اومده
+    let users = [
+        {
+            name: 'amir',
+            age: 20,
+            city: 'tehran',
+            job: 'programmer'
+        },
+        {
+            name: 'ali',
+            age: 10,
+            city: 'tehran',
+            job: 'programmer'
+        },
+        {
+            name: 'reza',
+            age: 5,
+            city: 'tehran',
+            job: 'programmer'
+        },
+        {
+            name: 'sara',
+            age: 9,
+            city: 'tehran',
+            job: 'programmer'
+        }
+    ]
+
+
+    document.getElementById('checkAge').onclick = function () {
+        let isAgeOk = users.some((user) => {
+            return user.age >= 18
+        })
+        if(isAgeOk){
+            alert('everyone is ok')
+        }else{
+            alert('someone is not ok')
+        }
+    }
+
+</script>
+</body>
+</html>
