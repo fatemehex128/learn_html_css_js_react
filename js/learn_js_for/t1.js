@@ -21,8 +21,24 @@ for (let key in myArr) {
     console.log(myArr[key])
 }
 
+// آموزش for in برای آبجکت ها
+for (let key in myObj){
+
+
+}
+
+
 for (let key in myObj) {
     console.log(`this is my key : ${key} of myObj`)
 }
 
 // آموزش for of
+
+for (let item of myArr) {
+    console.log(`this is my item : ${item} of myArr`)
+}
+
+
+for (let item of myObj) {
+    console.log(`this is my item : ${item} of myObj`)
+}
