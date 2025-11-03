@@ -1,3 +1,4 @@
+
 // NaN یعنی not a number
 // null یعنی خالی هیچی وجد نداشته
 // undefined یعنی نامشخص یعنی تعریف نشده یعنی ساخته نشده
@@ -42,9 +43,11 @@ let myObj = {
         console.log(this)
 
     },
+
     [oneOfMyObjKey]: "xxx",  // زمانی که کلید ما داخل یک متغییر باشد و ما نیاز داشته باشیم مقدار داخل آن متغییر تبدیل به کلید شود از این روش استفاده میشود این در زمان اجرا به این شکل تبدیل میشود "naneMamad:"xxxx
 
 }
+myObj.workWithThis();
 // نمونه استفاده از this در کلاس ها جهت یادآوری
 // class mamad {
 //     y
@@ -59,7 +62,7 @@ let myObj = {
 //     }
 // }
 
-myObj.workWithThis()
+
 // ==
 myObj["workWithThis"]
 
@@ -116,6 +119,6 @@ let newObj3 = {...myObj}
 let newObj4 = {...myObj, new_home_2: "new home 3"}
 let newObj5 = {...myObj, name, age,}
 // از این کار برای مرج کردن دوتا آبجکت هم استفاده میشود
-// وقتی چند تا با هم ادغام میکنیم و تکراری داریم overwrite میشود و تکراری اضافه نمیشود چون کلید ها یکی هستن و مشخص هست هر کدام کجا قرار بگیرد به همین دلیل تکرار نمیشوند
-let newObj6 = {...myObj, ...example, ...myObj, ...myObj, ...myObj}
+let newObj6 = {...myObj, ...example}
 
+myObj["funcArrowExample"](1) // در اینجا چون آدرس خونه یک تابع برمیگردد میتوانیم جلوی هر آدرس تابع پرانتز بزاریم و صدایش کنیم
