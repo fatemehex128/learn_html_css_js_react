@@ -1,0 +1,16 @@
+{
+  "name": "learn_js_vite",
+  "version": "1.2.1",
+  "description": "laern vite for compile new js to old js code",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fatemeh soleimani",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "vite": "^7.2.1"
+  }
+}
