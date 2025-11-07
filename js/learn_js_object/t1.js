@@ -122,3 +122,18 @@ let newObj5 = {...myObj, name, age,}
 let newObj6 = {...myObj, ...example}
 
 myObj["funcArrowExample"](1) // در اینجا چون آدرس خونه یک تابع برمیگردد میتوانیم جلوی هر آدرس تابع پرانتز بزاریم و صدایش کنیم
+
+
+
+// استخراح یک خونه از ابجکت ها داخل متغیر
+let xx = {name: "amir", age: 20}
+
+// راه عادی
+let name = xx.name
+// =
+// راه حرفه ای میگیم خونه name و age بره داخل متغیر های name ,age
+let {name, age} = xx
+
+// اگر دستی یک خونه دیگه به آیجکت ها اضافه کردیم میتونیم اونم استخراج کنیم
+// xxx["age2"]=220
+let {name,age2} = xxx
