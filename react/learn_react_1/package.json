@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "c": "git commit -m && git push "
+    "c": "git add . && git commit -m 'test' && git push "
   },
   "dependencies": {
     "lodash": "^4.17.21",
