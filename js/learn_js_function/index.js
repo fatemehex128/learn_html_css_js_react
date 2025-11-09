@@ -41,4 +41,8 @@ let {name, age} = {name: "amir", age: 20}
 // در اینجا هم myVarExported متغیر هست
 import myVarExported from './test.js'
 // در اینجا هم namex متغیر هست
-import {namex,age,xxx} from './test'
+// import {namex,age,xxx} from './test'
+// | نوع تابع    | میشه قبل تعریف صدا زد؟ | تو حافظه بالا میره؟ | شکل                          |
+// | ----------- | ---------------------- | ------------------- | ---------------------------- |
+// | Declaration | ✅ بله                  | ✅ بله               | `function name() {}`         |
+// | Expression  | ❌ نه                   | ❌ نه                | `const name = function() {}` |
