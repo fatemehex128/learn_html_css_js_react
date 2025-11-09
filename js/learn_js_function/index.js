@@ -46,3 +46,4 @@ import myVarExported from './test.js'
 // | ----------- | ---------------------- | ------------------- | ---------------------------- |
 // | Declaration | ✅ بله                  | ✅ بله               | `function name() {}`         |
 // | Expression  | ❌ نه                   | ❌ نه                | `const name = function() {}` |
+ییی//
