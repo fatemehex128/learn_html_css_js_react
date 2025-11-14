@@ -17,8 +17,9 @@ let JsForEach = (callbackFn) => {
 JsForEach((item, index) => {
     console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", item, index)
 })
-
-
+//
+// map یعنی:
+//     «روی تک‌تک اعضای آرایه بچرخ و برای هرکدام یک خروجی جدید برگردان، و در نهایت یک آرایه جدید بساز»
 // یک آدرس تابع از ما میگیرد و به اضای هر خونه اریه صدا میزند تابع ما را و اون خونه ارایه و کلید اش را به تابع ما میفرسند. و هرچی تابع ما بازگرداند ان را در همان خانه آرایه جایگذین میکند (میتوانیم ارایه را تغییر بدهیم)
 let newTestArray = testArray.map((item, index) => {
     // این کد داخل تابع به اضای هر خونه ارایه صدا زده میشود و هرچی Return بشود جایگذین همان خونه میشود
