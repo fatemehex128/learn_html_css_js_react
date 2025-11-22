@@ -1,6 +1,6 @@
-import "./App.css";
-import BtnFunc from "./components/btn-func";
-import BtnClass from "./components/btn-class";
+import "../App.css";
+import BtnFunc from "./btn-func.jsx";
+import BtnClass from "./btn-class.jsx";
 
 function BtnApp() {
     return (

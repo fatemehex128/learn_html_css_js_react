@@ -1,12 +1,11 @@
 import {createRoot} from 'react-dom/client'
 import {Link, Outlet, RootRoute, Route, Router, RouterProvider,} from '@tanstack/react-router'
 
-import BtnApp from './BtnApp.jsx'
-import TodoList from './TodoList.jsx'
+import BtnApp from './components/BtnApp.jsx'
+import TodoList from './components/TodoList.jsx'
 import {StrictMode} from "react";
-import Amir from './Amir.jsx'
-import Quiz from './Quiz.jsx'
-
+import Quiz from './components/Quiz.jsx'
+import CreateArticle from "./components/CreateArticle.jsx";
 // ساخت layout
 // یعنی یک تیکه کد توی همه صفحات ثابت باشد بجز یک بخش ان
 // در اینجا همه چیز داخل این کامپوننت ثابت هست برای همه صفحات
@@ -32,24 +31,23 @@ const routeTree = rootRoute.addChildren([
     new Route({
         getParentRoute: () => rootRoute,
         path: '/btn',
-        component: BtnApp,
+        component: () => <BtnApp/>,
     }),
     new Route({
         getParentRoute: () => rootRoute,
         path: '/todo',
-        component: TodoList,
-    }),
-    new Route({
-        getParentRoute: () => rootRoute,
-        path: '/amir',
-        component: Amir,
+        component: () => <TodoList/>,
     }),
     new Route({
         getParentRoute: () => rootRoute,
         path: '/quiz',
-        component: Quiz,
+        component: () => <Quiz/>,
     }),
-
+    new Route({
+        getParentRoute: () => rootRoute,
+        path: '/article',
+        component: () => <CreateArticle/>,
+    })
 ])
 
 createRoot(document.getElementById('root')).render(

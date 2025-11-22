@@ -8,14 +8,12 @@ export default class BtnClass extends Component {
             count: 0,
             name: "amir"
         }
+
         fetch('https://fakestoreapi.com/products/1')
             .then(res => console.log(res.json()))
 
     }
-
     render() {
-
-
 
         return <div style={{color: "red"}}>
             This is btn class
@@ -39,4 +37,5 @@ export default class BtnClass extends Component {
             ---{this.props.brothers.map(x => " and " + x)}
         </div>;
     }
+
 }
