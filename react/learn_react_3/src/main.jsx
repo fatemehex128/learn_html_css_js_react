@@ -7,6 +7,7 @@ import {StrictMode} from "react";
 import Quiz from './components/Quiz.jsx'
 import CreateArticle from "./components/CreateArticle.jsx";
 import CreateProduct from "./components/CreateProduct.jsx";
+import CreateToDo from "./components/AdvanceToDoList..jsx";
 // ساخت layout
 // یعنی یک تیکه کد توی همه صفحات ثابت باشد بجز یک بخش ان
 // در اینجا همه چیز داخل این کامپوننت ثابت هست برای همه صفحات
@@ -53,6 +54,11 @@ const routeTree = rootRoute.addChildren([
         getParentRoute: () => rootRoute,
         path: '/product',
         component: () => <CreateProduct/>,
+    }),
+    new Route({
+        getParentRoute: () => rootRoute,
+        path: '/AdvanceToDo',
+        component: () => <CreateToDo/>,
     })
 ])
 
