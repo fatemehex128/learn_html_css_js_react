@@ -8,6 +8,7 @@ import Quiz from './components/Quiz.jsx'
 import CreateArticle from "./components/CreateArticle.jsx";
 import CreateProduct from "./components/CreateProduct.jsx";
 import CreateToDo from "./components/AdvanceToDoList..jsx";
+import LifeCycle from "./components/LifeCycle.jsx";
 // ساخت layout
 // یعنی یک تیکه کد توی همه صفحات ثابت باشد بجز یک بخش ان
 // در اینجا همه چیز داخل این کامپوننت ثابت هست برای همه صفحات
@@ -59,6 +60,11 @@ const routeTree = rootRoute.addChildren([
         getParentRoute: () => rootRoute,
         path: '/AdvanceToDo',
         component: () => <CreateToDo/>,
+    }),
+    new Route({
+        getParentRoute: () => rootRoute,
+        path: '/effect',
+        component: () => <LifeCycle/>,
     })
 ])
 

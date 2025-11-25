@@ -13,6 +13,25 @@ export default class BtnClass extends Component {
             .then(res => console.log(res.json()))
 
     }
+
+
+    componentDidMount() {
+        console.log("componentDidMount")
+        // زمان اجرا میشود که کامپوننت در صفحه نمایش داده شد
+        // برای اولین بار
+    }
+
+    componentDidUpdate() {
+        console.log("componentDidUpdate")
+        // زمانی اجرا میشود که کامپوننت به روز شده
+        // با تغییر هر استیت یا هر چیزی که ری رینر میکنه
+    }
+
+    componentWillUnmount() {
+        console.log("componentWillUnmount")
+        // زمانی اجرا می شود که کامپوننت از صفحه حذف شود
+    }
+
     render() {
 
         return <div style={{color: "red"}}>
