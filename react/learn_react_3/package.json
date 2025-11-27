@@ -12,6 +12,7 @@
   "dependencies": {
     "@tanstack/react-router": "^1.139.0",
     "canvas-confetti": "^1.9.3",
+    "ollama": "^0.6.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tcomb-validation": "^3.4.1"
