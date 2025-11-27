@@ -22,16 +22,33 @@ export default function AiSum() {
                                 2. The JSON must have EXACTLY these keys:
                                    - "question"
                                    - "answer"
-                                   - "translate"
                                    - "mood"
-                                3. Set "question" to the original user message.
-                                4. Set "mood" to EXACTLY ONE of these values:
-                                   - "love"
-                                   - "angry"
-                                   - "sad"
-                                   - "happy"
-                                5. Set "answer" to a short explanation in English that describes the emotional mood of the user's message and why you chose it.
-                                6. Set "translate" to a natural Persian (Farsi) translation of the "answer".
+                                   _"type_of_personality_disorder"
+                                3.the Key type_of_personality_disorder has these values, that you should analyze the massage and say the type of personality disorder :
+                                    * Paranoid Personality Disorder
+                                    * Schizoid Personality Disorder
+                                    * Schizotypal Personality Disorder
+                                    * Antisocial Personality Disorder
+                                    * Borderline Personality Disorder
+                                    * Histrionic Personality Disorder
+                                    * Narcissistic Personality Disorder
+                                    * Avoidant Personality Disorder
+                                    * Dependent Personality Disorder
+                                    * Obsessive–Compulsive Personality Disorder
+                                 each disorder has its own core belief:
+                                    *Paranoid Personality Disorder** — Core belief: *“Others cannot be trusted and intend to harm or deceive me.”*
+                                    * **Schizoid Personality Disorder** — Core belief: *“Relationships are not rewarding; I am better off alone.”*
+                                    * **Schizotypal Personality Disorder** — Core belief: *“The world is strange and dangerous; my unusual perceptions and ideas are meaningful.”*
+                                    * **Antisocial Personality Disorder** — Core belief: *“People are tools; rules do not apply to me.”*
+                                    * **Borderline Personality Disorder** — Core belief: *“I am vulnerable to abandonment; I cannot cope alone.”*
+                                    * **Histrionic Personality Disorder** — Core belief: *“I must be the center of attention to be valued.”*
+                                    * **Narcissistic Personality Disorder** — Core belief: *“I am superior; my needs take priority.”*
+                                    * **Avoidant Personality Disorder** — Core belief: *“I am inadequate and will be rejected if exposed.”*
+                                    * **Dependent Personality Disorder** — Core belief: *“I cannot function without others; I need someone to take care of me.”*
+                                    * **Obsessive–Compulsive Personality Disorder** — Core belief: *“Mistakes are unacceptable; control and perfection are necessary.”*
+
+
+                                    
                                 7. Use valid JSON syntax:
                                    - Use double quotes for all keys and string values.
                                    - Do not add trailing commas.
@@ -39,7 +56,7 @@ export default function AiSum() {
                                 
                                 Example format (this is just an example, do NOT reuse this text):
                                 
-                                {"question":"I miss you so much","answer":"The message shows longing and affection, so the mood is love.","translate":"این پیام دلتنگی و محبت را نشان می‌دهد، بنابراین حال و هوا عشق است.","mood":"love"}
+                                {"type_of_personality_disorder":"Paranoid Personality Disorder","question":"I miss you so much","answer":"The message shows longing and affection, so the mood is love.","mood":"love"}
                                       `.trim()
                 }, {
                     role: 'user', content: question
@@ -64,13 +81,13 @@ export default function AiSum() {
     }
 
     return <div>
-        <input type="text" value={question} onChange={(e) => setQuestion(e.target.value)}/>
+        <textarea cols={100} rows={10} value={question} onChange={(e) => setQuestion(e.target.value)}/>
         {result && (<div>
             {result.error ? (<div>Error: {result.error}</div>) : (<div>
                 <div><strong>Question:</strong> {result.question}</div>
                 <div><strong>Answer:</strong> {result.answer}</div>
                 <div><strong>Mood:</strong> {result.mood}</div>
-                <div><strong>Translate:</strong> {result.translate}</div>
+                <div><strong> Type of personality disorder:</strong> {result.type_of_personality_disorder}</div>
             </div>)}
         </div>)}
         <button onClick={callAi} disabled={loading}>
