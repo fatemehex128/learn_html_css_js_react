@@ -6,13 +6,14 @@ export default function AiSum() {
     const [result, setResult] = useState(null)
     const [loading, setLoading] = useState(false)
     const [question, setQuestion] = useState("when i was 10 year old i work hardly instead study and my dad punished me")
+    const [aiMode, setAiMode] = useState("gemma3:4b")
 
     async function callAi() {
         setLoading(true)
         setResult(null)
         try {
             let obj = {
-                model: 'phi4-mini', messages: [{
+                model: aiMode, messages: [{
                     role: 'system', content: `
                                 You analyze the emotional mood of the user's message and explain it.
                                 
@@ -81,6 +82,12 @@ export default function AiSum() {
     }
 
     return <div>
+        <select value={aiMode} onChange={(e)=>setAiMode(e.target.value)}>
+            <option value="qwen3:8b">qwen3:8b</option>
+            <option value="qwen3:14b">qwen3:14b</option>
+            <option value="phi4-mini">phi4-mini</option>
+            <option value="gemma3:4b">gemma3:4b</option>
+        </select>
         <textarea cols={100} rows={10} value={question} onChange={(e) => setQuestion(e.target.value)}/>
         {result && (<div>
             {result.error ? (<div>Error: {result.error}</div>) : (<div>
