@@ -163,4 +163,24 @@ export default Counter;
 // }
 //
 // export default EventsDemo;
+// درس بعدی:Conditional Rendering
+// چند حالت برای چک کردن شرطها و انتخاب درست ترین کامپوننت وجود دارد اول با if مثال :
+// if (isLoggedIn) {
+//   return <Dashboard />;
+// }
+// return <Login />;
+// حالت بعدی با& است مثال
+// {isAdmin && <AdminPanel />}
+// حالت بعدی شرط سه تایی مثال:
+// {isLoading ? <Loading /> : <Content />}
+// استفاده از متغیر کمکی
+// let content;
+//
+// if (error) {
+//   content = <Error />;
+// } else {
+//   content = <Data />;
+// }
+//
+// return <div>{content}</div>;
 
