@@ -1,4 +1,3 @@
-import "../App.css";
 import BtnFunc from "./btn-func.jsx";
 import BtnClass from "./btn-class.jsx";
 

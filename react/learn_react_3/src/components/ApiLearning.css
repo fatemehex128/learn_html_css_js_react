@@ -1,0 +1,46 @@
+#x1 {
+    color: red;
+    width: 50px;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+#x2 {
+    color: blue;
+    font-weight: bold;
+    background: greenyellow;
+    width: 50px;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: #1a1a1a 10px 10px 10px 10px;
+}
+
+#container{
+    width: 100%;
+}
+.box{
+    border: 1px dashed black;
+}
+.mb10{
+    margin-bottom: 10px;
+}
+.ml10{
+    margin-left: 10px;
+}
+.ml20{
+    margin-left: 20px;
+}
+.ml30{
+    margin-left: 30px;
+}
+.ml40{
+    margin-left: 30px;
+}
+
+#dsad:hover{
+
+}
