@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+//json server یک فایل جیسون را تبیدل به یک سرورای پی ای میکند.
+//وقتی JSON Server را اجرا می‌کنی، این فایل را تبدیل می‌کند به یک API کامل:
+
+GET /products
+
+POST /products
+
+PUT /products/1
+
+DELETE /products/1
+
+دقیقاً مثل یک بک‌اند واقعی.
+<!--اسم آرایه داخل فایل JSON = اسم مسیر API
+مراحل نصب جیسان:
+روش ۱: نصب سراسری (Global)
+پورت 3001 برای جلوگیری از تداخل با React
+
+json-server --watch db.json برای اجرای سرور
+مرحله بعد:
+اتصال React به JSON Server
+در React برای دریافت داده از JSON Server معمولاً از fetch یا axios استفاده می‌کنیم.
+fetch('http://localhost:3001/products')
+.then(res => res.json())
+.then(data => console.log(data))
+
+
+ چهار نوع درخواست مهم (CRUD)
+
+JSON Server دقیقاً مانند یک سرور واقعی از عملیات CRUD پشتیبانی می‌کند:
+
+### 1) GET
+
+گرفتن داده
+مثال:
+
+```
+GET /tasks
+```
+
+### 2) POST
+method باید "POST" باشد
+body باید JSON.stringify شود
+headers باید Content-Type را مشخص کند تا JSON Server بفهمد داده JSON است
+اضافه کردن داده جدید
+مثال:
+fetch("http://localhost:3001/tasks", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    title: "Learn React",
+    done: false
+  })
+})
+
+### 3) PUT یا PATCH
+ویرایش کردن داده
+مثال:
+PUT /tasks/1
+```
+``
+### 4) DELETE
+حذف کردن داده
+
+
+چرا اصلاً JSON.stringify؟
+این یک آبجکت جاوااسکریپتی است، نه یک رشته JSON.
+اما وقتی با fetch درخواست POST می‌زنی، body باید یک رشته (string) باشد، نه آبجکت خام.
+پس باید آبجکت را تبدیل کنیم به رشته JSON:
+
+۲. Content-Type: "application/json" چه کار می‌کند؟
+این یعنی:
+«آقای سرور، داده‌ای که برایت فرستادم، JSON است.»
+JSON Server بر اساس همین هدر، داده را به‌عنوان JSON می‌خواند و تبدیل به آبجکت می‌کند و در db.json ذخیره می‌کند.
+
+
+حالا تا اینجا را جمع‌بندی کنیم:
+JSON Server = یک API تقلبی اما واقعی روی یک فایل db.json
+React با fetch (یا axios) به آدرس‌هایی مثل
+http://localhost:3001/tasks وصل می‌شود
+GET → خواندن داده‌ها و setTasks(data)
+POST → ساخت دادهٔ جدید، با:
+method: "POST"
+body: JSON.stringify(object)
+هدر "Content-Type": "application/json"
+بعد از POST → با setTasks(prev => [...prev, createdTask]) UI را آپدیت می‌کنیم
+</body>
+</html>
